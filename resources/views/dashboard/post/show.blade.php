@@ -1,0 +1,15 @@
+@extends('dashboard.layout')
+
+@section('content')
+
+    <h1>{{$post->title}}</h1>
+
+    <p>{{$post->description}}</p>
+
+    <p>{{$post->posted}}</p>
+
+    <div>
+        <p>{{$post->content}}</p>
+    </div>
+
+@endsection
