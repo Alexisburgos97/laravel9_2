@@ -19,13 +19,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('post', PostController::class);
-//Route::get('post/', [PostController::class, 'index']);
-//Route::get('post/create', [PostController::class, 'create']);
-//Route::get('post/{post}/edit', [PostController::class, 'edit']);
-//Route::Post('post', [PostController::class, 'store']);
-//Route::put('post/{post}', [PostController::class, 'update']);
-//Route::delete('post/{post}', [PostController::class, 'destroy']);
 
-Route::resource('category', CategoryController::class);
 
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function(){
+
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::resources([
+        'post' => PostController::class,
+        'category' => CategoryController::class,
+    ]);
+
+});
+
+//Route::resource('post', PostController::class)->middleware(['auth', 'verified'])->name('post');
+//Route::resource('category', CategoryController::class)->middleware(['auth', 'verified'])->name('category');
+
+
+require __DIR__.'/auth.php';

@@ -2,9 +2,11 @@
 
 @section('content')
 
-    <a href="{{route('post.create')}}">Crear</a>
+    <div class="container my-3 text-right">
+        <a href="{{route('post.create')}}" class="btn btn-success" >Crear</a>
+    </div>
 
-    <table>
+    <table class="table mb-3">
 
         <thead>
 
@@ -27,9 +29,9 @@
                 <td>{{$post->category->title}}</td>
                 <td>{{$post->posted}}</td>
                 <td>
-                    <a href="{{ route('post.edit', $post) }}">Editar</a>
-                    <a href="{{ route('post.show', $post) }}">Ver</a>
-{{--                    <a href="{{ route('post.destroy', $post) }}">Eliminar</a>--}}
+                    <a href="{{ route('post.edit', $post) }}" class="btn btn-info">Editar</a>
+                    <a href="{{ route('post.show', $post) }}" class="btn btn-primary">Ver</a>
+                    <a href="{{ route('post.destroy', $post) }}" class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>
         @endforeach

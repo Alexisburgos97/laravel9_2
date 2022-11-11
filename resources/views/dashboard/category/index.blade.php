@@ -2,9 +2,11 @@
 
 @section('content')
 
-    <a href="{{route('category.create')}}">Crear</a>
+    <div class="container my-3 text-right">
+        <a href="{{route('category.create')}}" class="btn btn-success mt-3">Crear</a>
+    </div>
 
-    <table>
+    <table class="table mb-3">
 
         <thead>
 
@@ -23,9 +25,9 @@
                 <td>{{$category->title}}</td>
                 <td>{{$category->slug}}</td>
                 <td>
-                    <a href="{{ route('category.edit', $category) }}">Editar</a>
-                    <a href="{{ route('category.show', $category) }}">Ver</a>
-{{--                    <a href="{{ route('category.destroy', $category) }}">Eliminar</a>--}}
+                    <a href="{{ route('category.edit', $category) }}" class="btn btn-info">Editar</a>
+                    <a href="{{ route('category.show', $category) }}" class="btn btn-primary">Ver</a>
+                    <a href="{{ route('category.destroy', $category) }}" class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>
         @endforeach

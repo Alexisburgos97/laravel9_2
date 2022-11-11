@@ -9,7 +9,7 @@
         @csrf
 
         <label for="title" >Título</label>
-        <input type="text" name="title" id="title" value="{{$category->title}}" >
+        <input type="text" name="title" id="title" value="{{$category->title}}" class="form-control" >
         @error('title')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -17,14 +17,14 @@
         @enderror
 
         <label for="slug" >Slug</label>
-        <input type="text" name="slug" id="slug" value="{{$category->slug}}" >
+        <input type="text" name="slug" id="slug" value="{{$category->slug}}" class="form-control" >
         @error('slug')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
 
-        <button type="submit"> Envíar </button>
+        <button type="submit" class="btn btn-success mt-3"> Envíar </button>
 
     </form>
 

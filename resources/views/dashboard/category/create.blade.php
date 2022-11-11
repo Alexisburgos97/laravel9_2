@@ -9,7 +9,7 @@
         @csrf
 
         <label for="title" >Título</label>
-        <input type="text" name="title" id="title" value="{{old('title')}}" >
+        <input type="text" name="title" id="title" value="{{old('title')}}" class="form-control" >
         @error('title')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -17,7 +17,7 @@
         @enderror
 
         <label for="slug" >Slug</label>
-        <input type="text" name="slug" id="slug" value="{{old('slug')}}" >
+        <input type="text" name="slug" id="slug" value="{{old('slug')}}" class="form-control" >
         @error('slug')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
